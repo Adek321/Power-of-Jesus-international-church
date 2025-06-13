@@ -1,3 +1,11 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  max-width: 100%;
+  height: 100%;
+}
+
 /* church.css */
 * {
     margin: 0;
@@ -10,20 +18,35 @@ body {
     line-height: 1.6;
     color: #333;
 }
-
-/* Accessibility: Skip Link */
-.skip-link {
-    position: absolute;
-    top: -40px;
-    left: 0;
-    background: #1e3a8a;
-    color: #f1c40f;
-    padding: 8px;
-    z-index: 1000;
-    font-size: 1rem;
+body {
+  overflow-x: hidden;
 }
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+/* Wrap site content within max width */
+.container {
+  width: 100%;
+  max-width: none;
+  padding: 0;
+  margin: 0;
+}
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #f1c40f;
+  color: #5b1a28;
+  padding: 8px;
+  z-index: 1000;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
 .skip-link:focus {
-    top: 0;
+  top: 0;
 }
 
 /* Header */
@@ -51,6 +74,97 @@ body {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+}
+.navbar {
+  background-color: #3c0e18;
+  padding: 1rem 2rem;
+  position: relative;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu li {
+  position: relative;
+}
+
+.nav-menu a {
+  color: #f1c40f;
+  text-decoration: none;
+  padding: 0.5rem;
+  display: inline-block;
+}
+
+.nav-menu a:hover {
+  color: #ffe082;
+}
+
+/* Dropdown Menu */
+.has-dropdown:hover .dropdown,
+.has-dropdown:focus-within .dropdown {
+  display: block;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #3c0e18;
+  list-style: none;
+  padding: 0.5rem 0;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 999;
+}
+
+.dropdown li {
+  width: 180px;
+}
+
+.dropdown a {
+  padding: 0.5rem 1rem;
+  display: block;
+  white-space: nowrap;
+}
+
+/* Mobile toggle */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  color: #f1c40f;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #3c0e18;
+    margin-top: 1rem;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+  }
+
+  .nav-menu li {
+    margin-bottom: 0.5rem;
+  }
 }
 
 .nav-links {
@@ -81,7 +195,7 @@ body {
 
 /* Hero Section */
 .hero {
-    height: 70vh;
+  min-height: 100vh;
     background: url('church-bg.jpg') no-repeat center center/cover;
     display: flex;
     justify-content: center;
@@ -453,6 +567,75 @@ footer {
 footer p {
     margin-bottom: 0.5rem;
 }
+.site-footer {
+  background-color: #3c0e18;
+  color: #ffffff;
+  padding: 4rem 2rem 2rem;
+  font-size: 0.95rem;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-column {
+  flex: 1 1 220px;
+  min-width: 220px;
+}
+
+.footer-column h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #f1c40f;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-column a {
+  color: #f1c40f;
+  text-decoration: none;
+}
+
+.footer-column a:hover {
+  text-decoration: underline;
+}
+
+.social-icons a {
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1rem;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-column {
+    max-width: 100%;
+  }
+}
 
 .social-links a {
     color: #f1c40f;
@@ -574,4 +757,410 @@ footer p {
     .logo p {
         font-size: 0.8rem; /* Adjust subtitle size for mobile */
     }
+}
+/* ===================== */
+/* New/Updated Sections  */
+/* ===================== */
+
+/* Donations Section */
+.donate {
+    padding: 4rem 2rem;
+    background-color: #fffbe6;
+    text-align: center;
+}
+
+.donate h2 {
+    font-family: 'Lora', serif;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #1e3a8a;
+}
+
+.donate p {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+/* Additional Headings (h3) inside About Section */
+.about h3 {
+    font-size: 1.6rem;
+    margin-top: 2rem;
+    color: #1e3a8a;
+    font-weight: 600;
+}
+
+/* Unordered and Ordered Lists (for goals, values, objectives) */
+.about ul,
+.about ol {
+    max-width: 800px;
+    margin: 1rem auto 2rem auto;
+    text-align: left;
+    font-size: 1.05rem;
+    padding-left: 1.5rem;
+}
+
+.about ul li,
+.about ol li {
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+}
+
+/* Leadership - Support more boxes and flexible layout */
+.leader-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.leader {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 260px;
+    text-align: center;
+}
+
+.leader h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: #1e3a8a;
+}
+
+.leader p {
+    font-size: 0.95rem;
+}
+
+/* Responsive tweaks for longer leader lists */
+@media (max-width: 768px) {
+    .leader {
+        width: 90%;
+    }
+
+    .about ul,
+    .about ol {
+        padding-left: 1rem;
+    }
+}
+
+/* Smooth scroll offset fix if header is fixed */
+html {
+    scroll-padding-top: 100px; /* adjust if needed */
+}
+/* -------------------- */
+/* VIBRANT STYLE UPDATES */
+/* -------------------- */
+
+/* SECTION BACKGROUNDS FOR COLORFUL CONTRAST */
+.about,
+.events,
+.leadership {
+  background-color: #f0f4ff; /* soft lavender */
+}
+
+.services,
+.ministries {
+  background-color: #fff8e7; /* cream/beige */
+}
+
+.contact,
+.scripture,
+.donate {
+  background-color: #fcf0db; /* light peach/cream */
+}
+
+/* SECTION HEADINGS WITH UNDERLINE ACCENT */
+section h2 {
+  position: relative;
+  font-size: 2.5rem;
+  color: #1e3a8a;
+  margin-bottom: 2rem;
+  font-family: 'Lora', serif;
+}
+
+section h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #f1c40f;
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+
+/* BUTTON UPGRADE */
+.cta-button,
+.contact button,
+#new-verse {
+  padding: 0.8rem 2rem;
+  background-color: #e67e22; /* coral/orange */
+  color: #fff;
+  border-radius: 50px;
+  font-weight: 700;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover,
+.contact button:hover,
+#new-verse:hover {
+  background-color: #d35400;
+}
+
+/* NEW DONATIONS SECTION */
+.donate {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.donate p {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+}
+
+/* ABOUT SECTION ENHANCEMENTS */
+.about h3 {
+  font-size: 1.6rem;
+  margin-top: 2rem;
+  color: #1e3a8a;
+  font-weight: 600;
+}
+
+.about ul,
+.about ol {
+  max-width: 800px;
+  margin: 1rem auto 2rem auto;
+  text-align: left;
+  font-size: 1.05rem;
+  padding-left: 1.5rem;
+}
+
+.about ul li,
+.about ol li {
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+/* LEADERSHIP FLEXIBLE GRID */
+.leader-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.leader {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 260px;
+  text-align: center;
+}
+
+.leader h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #1e3a8a;
+}
+
+.leader p {
+  font-size: 0.95rem;
+}
+
+/* GALLERY PAGE SUPPORT */
+.gallery {
+  background-color: #fffbe6;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-item {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.gallery-item:hover {
+  transform: scale(1.03);
+}
+
+/* RESPONSIVE HEADERS AND LEADER BLOCKS */
+@media (max-width: 768px) {
+  .leader {
+    width: 90%;
+  }
+
+  .about ul,
+  .about ol {
+    padding-left: 1rem;
+  }
+
+  .cta-button,
+  .contact button,
+  #new-verse {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
+
+/* IMPROVE ANCHOR FOCUS AND SMOOTH SCROLL */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+a:focus {
+  outline: 2px solid #f1c40f;
+  outline-offset: 2px;
+}
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  overflow-x: hidden;
+}
+
+}
+.site-footer {
+  background-color: #2a0b12; /* matches VOSH’s deep footer shade */
+  color: #ffffff;
+  padding: 4rem 2rem 2rem;
+  font-size: 0.95rem;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-column {
+  flex: 1 1 220px;
+  min-width: 220px;
+}
+
+.footer-column h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #f1c40f;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-column a {
+  color: #f1c40f;
+  text-decoration: none;
+}
+
+.footer-column a:hover {
+  text-decoration: underline;
+}
+
+.contact-section p {
+  margin-bottom: 0.5rem;
+}
+
+.contact-section a {
+  color: #ffffff;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin-right: 0.8rem;
+  color: #ffffff;
+  text-decoration: none;
+  position: relative;
+  padding-left: 20px;
+}
+
+.social-icons a::before {
+  content: '';
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-size: cover;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.social-icons a:nth-child(1)::before { background-image: url('icons/facebook.svg'); }
+.social-icons a:nth-child(2)::before { background-image: url('icons/x.svg'); }
+.social-icons a:nth-child(3)::before { background-image: url('icons/instagram.svg'); }
+.social-icons a:nth-child(4)::before { background-image: url('icons/youtube.svg'); }
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1rem;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-column {
+    max-width: 100%;
+  }
+
+  .social-icons a {
+    margin: 0.4rem;
+  }
+}
+.social-icons a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: #f1c40f;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.social-icons a i {
+  font-size: 1.2rem;
+}
+header .header-content,
+footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
 }
