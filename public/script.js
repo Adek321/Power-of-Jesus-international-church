@@ -104,3 +104,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+// Gallery Lightbox Modal
+document.querySelectorAll('.gallery-item img').forEach(img => {
+  img.addEventListener('click', () => {
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modal-img');
+    modal.style.display = 'block';
+    modalImg.src = img.src;
+    modalImg.alt = img.alt;
+  });
+});
+
+document.querySelector('.modal-close').addEventListener('click', () => {
+  document.getElementById('modal').style.display = 'none';
+});
+
+window.addEventListener('click', (e) => {
+  const modal = document.getElementById('modal');
+  if (e.target === modal) {
+    modal.style.display = 'none';
+  }
+});
