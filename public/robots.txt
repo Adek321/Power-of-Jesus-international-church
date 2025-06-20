@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://pjic.onrender.com/sitemap.xml
