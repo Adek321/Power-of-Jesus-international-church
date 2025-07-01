@@ -48,16 +48,17 @@
         <h1>Power of Jesus International Ministries</h1>
         <p>Founded 2000 | Kisii Central, Kenya</p>
       </div>
-<nav class="navbar" role="navigation" aria-label="Main navigation">
+
+ <nav class="navbar" role="navigation" aria-label="Main navigation">
   <button class="menu-toggle" aria-expanded="false">☰</button>
   <ul class="nav-menu">
     <li><a href="#home">Home</a></li>
     <li class="has-dropdown">
-      <a href="#about">About</a>
+      <a href="#about-us">About</a>
       <ul class="dropdown">
+        <li><a href="#about">About</a></li>
         <li><a href="#leadership">Leadership</a></li>
         <li><a href="#mission">Mission</a></li>
-        <li><a href="#about">About</a></li>
       </ul>
     </li>
     <li><a href="#ministries">Ministries</a></li>
@@ -195,6 +196,7 @@
         <p>Lead minister and counselor.</p>
       </div>
       <div class="leader">
+        <img src="Gladys1.jpg" alt ="Gladys and Robert" />
         <h3>Pastors</h3>
         <p>Gladys Moraa & Robert Nyakundi</p>
       </div>
@@ -204,6 +206,7 @@
         <p>Everlin Nyaboke & Violet Akinyi</p>
       </div>
       <div class="leader">
+        <img src="Mary.jpg" alt ="Mary Kitondi" />
         <h3>Women Leader</h3>
         <p>Mary Kitondi</p>
       </div>
@@ -213,6 +216,7 @@
         <p>Sarah Auma</p>
       </div>
       <div class="leader">
+        <img src="Ben.jpg" alt ="Benard" />
         <h3>Church Hygiene</h3>
         <p>Benard Mose, Risper Kemunto, Sbina Nyakundi</p>
       </div>
@@ -248,10 +252,10 @@
     <p><strong>Email:</strong> <a href="mailto:info@powerofjesusministries.org">info@powerofjesusministries.org</a></p>
 <form action="https://formspree.io/f/mldnbqlz" method="POST">
   <label for="name">Name:</label>
-  <input type="text" name="name" required>
+  <input type="text" name="name" id="name" autocomplete="name" />
 
-  <label for="email">Email:</label>
-  <input type="email" name="email" required>
+  <label for="email">Email</label>
+  <input type="email" name="email" id="email" autocomplete="email" />
 
   <label for="message">Message:</label>
   <textarea name="message" required></textarea>
@@ -288,6 +292,7 @@
         <li><a href="#leadership">Leadership</a></li>
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li><a href="Childrenshome.html">Kingdom orphanage</a><li>
       </ul>
     </div>
 
@@ -323,7 +328,6 @@
     <img id="modal-img" src="" alt="Preview">
   </div>
 </div>
-
   <script src="script.js"></script>
 </body>
 </html>
